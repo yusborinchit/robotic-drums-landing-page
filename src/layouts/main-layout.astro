@@ -1,0 +1,39 @@
+---
+import '@astrojs/tailwind/base.css'
+
+const {
+  title = 'Robotic Drums',
+  description = 'Robotic Drums Landing Page Demo',
+  url = Astro.site,
+  image = 'social-preview-image.png',
+  author = 'Santiago García',
+} = Astro.props
+---
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="title" content={`${title}`} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+
+    <!-- open graph -->
+    <meta property="og:title" content={`${title}`} />
+    <meta property="og:description" content={description.slice(0, 100)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={`${Astro.site}${image}`} />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
