@@ -1,0 +1,18 @@
+---
+import { twMerge } from 'tailwind-merge'
+
+type Tag = 'div' | 'section' | 'article' | 'main' | 'header' | 'footer'
+
+interface Props {
+  tag?: Tag
+  className?: string
+  [key: string]: any
+}
+
+const { tag = 'div', className, ...props } = Astro.props
+const Component = tag
+---
+
+<Component {...props} class={twMerge('max-w-[900px] mx-auto px-6', className)}>
+  <slot />
+</Component>
