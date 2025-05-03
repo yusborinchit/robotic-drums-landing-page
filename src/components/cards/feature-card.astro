@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string
+  description: string
+  src?: string
+  alt?: string
+}
+
+const { title, description, src, alt } = Astro.props
+---
+
+<article
+  class="even:bg-primary group even:text-background relative flex aspect-[4/5] flex-col gap-4 overflow-hidden rounded-xl px-6 py-8"
+>
+  <h3 class="decoration-secondary text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
+  <p class="group-even:text-light-gray text-dark-gray">
+    {description}
+  </p>
+  <a href="#info" class="mt-auto text-end">Ver más &UpperRightArrow;</a>
+  {
+    src && (
+      <img
+        src={src}
+        alt={alt}
+        class="absolute -z-10 group-first:bottom-0 group-first:left-0 group-first:h-[50%] group-first:w-auto group-last:right-0 group-last:bottom-0 group-last:h-[45%] group-last:w-auto"
+      />
+    )
+  }
+</article>

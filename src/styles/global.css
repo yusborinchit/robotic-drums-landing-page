@@ -3,8 +3,18 @@
 @theme {
   --color-background: #FFFFFF;
   --color-foreground: #1E1E1E;
-  --color-primary: #7248f0;
-  --color-secondary: #FF5470;
   --color-light-gray: #D1D5DB;
   --color-dark-gray: #6B7280;
+
+  /* MORE ORIGINAL ALIKE COLORS */
+  /* --color-primary: #08155c;
+  --color-primary-dark: #061152;
+  --color-secondary: #f06e22;
+  --color-secondary-dark: #ad590a */
+
+  /* MY COLORS */
+  --color-primary: #331297;
+  --color-primary-dark: #1d075f;
+  --color-secondary: #fd4665;
+  --color-secondary-dark: #ec3554;
 }
