@@ -1,0 +1,17 @@
+---
+import MainContainer from '../containers/main-container.astro'
+---
+
+<section class="bg-primary text-background mt-42 py-18">
+  <MainContainer className="flex flex-col gap-6">
+    <h2 class="text-center text-5xl font-bold tracking-tighter">Nuestros socios</h2>
+    <p class="text-light-gray mx-auto max-w-md text-center">
+      Agradecemos el apoyo invaluable de nuestros socios colaboradores
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-18">
+      <img src="/partners/thaleslab.png" alt="Partner 1" class="h-auto max-w-[300px]" />
+      <img src="/partners/contemporanea.png" alt="Partner 3" class="h-auto max-w-[300px]" />
+      <img src="/partners/anni.png" alt="Partner 2" class="h-auto max-w-[300px]" />
+    </div>
+  </MainContainer>
+</section>

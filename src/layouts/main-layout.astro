@@ -10,7 +10,7 @@ const {
 } = Astro.props
 ---
 
-<html lang="es" dir="ltr">
+<html lang="es" dir="ltr" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,9 +31,7 @@ const {
 
     <title>{title}</title>
   </head>
-  <body class="bg-background text-foreground text-lg">
-    <main>
-      <slot />
-    </main>
+  <body class="bg-background text-foreground relative text-lg">
+    <slot />
   </body>
 </html>

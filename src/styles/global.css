@@ -18,3 +18,13 @@
   --color-secondary: #fd4665;
   --color-secondary-dark: #ec3554;
 }
+
+@utility polka-primary {
+  background-image: 
+    radial-gradient(var(--color-primary) 10%, var(--color-background) 10%),
+    radial-gradient(var(--color-primary) 10%, var(--color-background) 10%);
+  background-position: 0px 0px, 10px 10px;
+  background-size: 12px 12px;
+  background-color: var(--color-background);
+}
+

@@ -1,0 +1,37 @@
+---
+import MainContainer from '../containers/main-container.astro'
+---
+
+<section class="relative pt-42">
+  <MainContainer className="flex flex-col gap-6">
+    <h2 class="text-center text-5xl font-bold tracking-tighter">
+      <span class="text-secondary">¡</span>Así suena la innovación<span class="text-secondary">!</span>
+    </h2>
+    <p class="text-dark-gray mx-auto max-w-md text-center">
+      Si estás interesado en aprender más, echa un vistazo a nuestro
+      <a href="https://www.youtube.com/@Tatitamusic" class="text-secondary font-semibold underline">canal de YouTube</a>
+      para descubrir más sobre Robotic Drums
+    </p>
+  </MainContainer>
+  <div class="relative pt-8 pb-32">
+    <MainContainer className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {
+        [1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <video
+            controls
+            preload="none"
+            poster={`/thumbnails/thumbnail-${i}.jpg`}
+            class="bg-light-gray aspect-[9/16] h-full w-full rounded-xl object-cover odd:mb-6 even:mt-6"
+          >
+            <source src={`/videos/video-${i}.mp4`} type="video/mp4" />
+            <track kind="captions" label="Robotic Drums" />
+          </video>
+        ))
+      }
+    </MainContainer>
+    <div
+      class="polka-primary after:from-background before:from-background absolute inset-0 -z-20 before:absolute before:inset-0 before:-z-20 before:bg-gradient-to-t before:via-transparent before:via-35% before:to-transparent after:absolute after:inset-0 after:-z-10 after:bg-gradient-to-b after:via-transparent after:via-35% after:to-transparent"
+    >
+    </div>
+  </div>
+</section>
