@@ -11,6 +11,7 @@ const { src, title, description, link } = Astro.props
 
 <article class="group flex flex-col last:col-span-2">
   <iframe
+    loading="lazy"
     title={`Tutorial de ${title}`}
     src={src}
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
