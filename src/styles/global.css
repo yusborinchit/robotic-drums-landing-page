@@ -17,12 +17,14 @@
   --color-primary-dark: #1d075f;
   --color-secondary: #d52946;
   --color-secondary-dark: #a0172d;
+
+  --font-sans: 'Fira Sans', sans-serif;
 }
 
 @utility polka-primary {
   background-image: 
-    radial-gradient(var(--color-primary) 10%, var(--color-background) 10%),
-    radial-gradient(var(--color-primary) 10%, var(--color-background) 10%);
+    radial-gradient(var(--color-primary) 10%, transparent 10%),
+    radial-gradient(var(--color-primary) 10%, transparent 10%);
   background-position: 0px 0px, 10px 10px;
   background-size: 12px 12px;
   background-color: var(--color-background);

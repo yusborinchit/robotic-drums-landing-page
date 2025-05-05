@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/fira-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@tailwindcss/vite':
         specifier: ^4.1.5
         version: 4.1.5(vite@6.3.4(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)(yaml@2.7.1))
@@ -261,6 +264,9 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fontsource/fira-sans@5.2.5':
+    resolution: {integrity: sha512-N+GrTGOTIeYE/Wi5tY0RAnc1Tl3ddCdwfZQncvA1zH/lOpKerj9ZS5nfniSXDZ9wrXFRdWTH7anyrRDc+cMpCg==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -3160,6 +3166,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.1': {}
+
+  '@fontsource/fira-sans@5.2.5': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:

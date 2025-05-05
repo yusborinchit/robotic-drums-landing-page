@@ -1,4 +1,9 @@
 ---
+import '@fontsource/fira-sans/400.css'
+import '@fontsource/fira-sans/600.css'
+import '@fontsource/fira-sans/700.css'
+import '@fontsource/fira-sans/900.css'
+
 import Header from '../components/header.astro'
 import Footer from '../components/footer.astro'
 import MainLayout from '../layouts/main-layout.astro'
@@ -9,6 +14,7 @@ import GallerySection from '../sections/gallery-section.astro'
 import HeroSection from '../sections/hero-section.astro'
 import PartnersSection from '../sections/partners-section.astro'
 import TutorialsSection from '../sections/tutorials-section.astro'
+import ManualBanner from '../sections/manual-banner.astro'
 ---
 
 <MainLayout>
@@ -20,6 +26,7 @@ import TutorialsSection from '../sections/tutorials-section.astro'
     <GallerySection />
     <PartnersSection />
     <TutorialsSection />
+    <ManualBanner />
     <ContactSection />
   </main>
   <Footer />
