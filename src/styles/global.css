@@ -15,8 +15,8 @@
   /* MY COLORS */
   --color-primary: #331297;
   --color-primary-dark: #1d075f;
-  --color-secondary: #ff4362;
-  --color-secondary-dark: rgb(207, 32, 61);
+  --color-secondary: #d52946;
+  --color-secondary-dark: #a0172d;
 }
 
 @utility polka-primary {
