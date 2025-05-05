@@ -10,7 +10,7 @@ const { title, description, src, alt } = Astro.props
 ---
 
 <article
-  class="even:bg-primary group even:text-background relative flex aspect-[4/5] flex-col gap-4 overflow-hidden rounded-xl px-6 py-8 odd:mb-18 even:mt-18"
+  class="even:bg-primary group even:text-background relative flex flex-col gap-4 overflow-hidden rounded-xl px-6 py-8 md:odd:row-start-1 md:even:col-span-2 lg:aspect-[4/5] lg:odd:mb-18 lg:even:col-span-1 lg:even:row-start-1 lg:even:mt-18"
 >
   <h3 class="decoration-secondary z-20 text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
   <p class="group-even:text-light-gray text-dark-gray z-20">
@@ -18,7 +18,7 @@ const { title, description, src, alt } = Astro.props
   </p>
   <a
     href="#info"
-    class="group-odd:bg-secondary text-background group-even:bg-primary group-even:hover:bg-primary-dark group-odd:hover:bg-secondary-dark z-20 mt-auto ml-auto w-fit rounded-md px-4 py-2.5 text-end text-sm font-semibold transition-colors"
+    class="group-odd:bg-secondary text-background group-even:bg-primary group-even:hover:bg-primary-dark group-odd:hover:bg-secondary-dark z-20 mt-24 ml-auto w-fit rounded-md px-4 py-2.5 text-sm font-semibold transition-colors lg:mt-auto"
   >
     Ver Más &UpperRightArrow;
   </a>

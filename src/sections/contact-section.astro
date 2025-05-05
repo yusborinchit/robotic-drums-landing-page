@@ -2,8 +2,8 @@
 import MainContainer from '../containers/main-container.astro'
 ---
 
-<MainContainer tag="section" className="grid grid-cols-5 gap-6 pt-42">
-  <div class="col-span-3 flex flex-col gap-6">
+<MainContainer tag="section" className="grid gap-6 pt-42 md:grid-cols-5">
+  <div class="flex flex-col gap-6 md:col-span-3">
     <h2 id="contacto" class="text-5xl font-bold tracking-tighter">
       <span class="text-secondary">¿</span>Tenés dudas<span class="text-secondary">?</span>
     </h2>
@@ -15,10 +15,10 @@ import MainContainer from '../containers/main-container.astro'
       > o completa el formulario de contacto. Estamos para ayudarte.
     </p>
     <form class="flex flex-col gap-4">
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid gap-4 md:grid-cols-2">
         <div class="flex flex-col gap-1">
           <label for="name" class="text-base font-semibold">
-            <span class="text-secondary">#</span> Nombre<span class="text-secondary">:</span>
+            <span class="text-primary">#</span> Nombre<span class="text-primary">:</span>
           </label>
           <input
             id="name"
@@ -30,7 +30,7 @@ import MainContainer from '../containers/main-container.astro'
         </div>
         <div class="flex flex-col gap-1">
           <label for="lastname" class="text-base font-semibold">
-            <span class="text-secondary">#</span> Apellido<span class="text-secondary">:</span>
+            <span class="text-primary">#</span> Apellido<span class="text-primary">:</span>
           </label>
           <input
             id="lastname"
@@ -41,10 +41,10 @@ import MainContainer from '../containers/main-container.astro'
           />
         </div>
       </div>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid gap-4 md:grid-cols-2">
         <div class="flex flex-col gap-1">
           <label for="email" class="text-base font-semibold">
-            <span class="text-secondary">#</span> Email<span class="text-secondary">:</span>
+            <span class="text-primary">#</span> Email<span class="text-primary">:</span>
           </label>
           <input
             id="email"
@@ -56,7 +56,7 @@ import MainContainer from '../containers/main-container.astro'
         </div>
         <div class="flex flex-col gap-1">
           <label for="phone" class="text-base font-semibold">
-            <span class="text-secondary">#</span> Teléfono<span class="text-secondary">:</span>
+            <span class="text-primary">#</span> Teléfono<span class="text-primary">:</span>
           </label>
           <input
             id="phone"
@@ -69,7 +69,7 @@ import MainContainer from '../containers/main-container.astro'
       </div>
       <div class="flex flex-col gap-1">
         <label for="message" class="text-base font-semibold">
-          <span class="text-secondary">#</span> Mensaje<span class="text-secondary">:</span>
+          <span class="text-primary">#</span> Mensaje<span class="text-primary">:</span>
         </label>
         <textarea
           id="message"
@@ -80,13 +80,13 @@ import MainContainer from '../containers/main-container.astro'
         ></textarea>
       </div>
       <button
-        class="bg-secondary text-background hover:bg-secondary-dark mt-8 grid w-fit rounded-md px-5 py-2.5 font-semibold transition-colors"
+        class="bg-secondary text-background hover:bg-secondary-dark mt-8 grid w-full rounded-md px-5 py-2.5 text-center font-semibold transition-colors md:w-fit"
       >
         Enviar Mensaje
       </button>
     </form>
   </div>
-  <div class="col-span-2">
+  <div class="col-span-2 hidden md:inline">
     <img loading="lazy" src="/contact.jpg" alt="Tatita" class="h-full rounded-xl object-cover" />
   </div>
 </MainContainer>
