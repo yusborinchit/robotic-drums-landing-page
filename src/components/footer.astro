@@ -1,12 +1,45 @@
 ---
 import MainContainer from '../containers/main-container.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <footer class="bg-primary text-background mt-64 py-6">
-  <MainContainer className="flex flex-col gap-2">
-    <div class="w-full">
-      <a href="/"><img loading="lazy" src="/logo.png" alt="Robotic Drums" class="h-10" /></a>
+  <MainContainer className="flex items-center justify-between gap-2">
+    <div class="flex flex-col gap-2">
+      <a href="/">
+        <img loading="lazy" src="/logo.png" alt="Robotic Drums" class="h-10" />
+      </a>
+      <p class="text-xs">Copyright © 2025 - Yusborinchit</p>
     </div>
-    <p class="text-base opacity-30">Copyright © 2025 - Yusborinchit</p>
+    <div class="flex items-center gap-4">
+      <div class="flex flex-col gap-2">
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <Icon name="mdi:youtube" class="size-5" />
+          <span>YouTube</span>
+        </a>
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <Icon name="mdi:facebook" class="size-5" />
+          <span>Facebook</span>
+        </a>
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <Icon name="mdi:instagram" class="size-5" />
+          <span>Instagram</span>
+        </a>
+      </div>
+      <div class="bg-background h-[64px] w-px"></div>
+      <div class="flex flex-col gap-2">
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <span class="font-semibold">¿Aún con dudas?</span>
+        </a>
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <Icon name="mdi:whatsapp" class="size-5" />
+          <span>+59892034050</span>
+        </a>
+        <a href="/" class="flex items-center gap-1 text-sm">
+          <Icon name="mdi:email" class="size-5" />
+          <span>info@roboticdrums.com</span>
+        </a>
+      </div>
+    </div>
   </MainContainer>
 </footer>

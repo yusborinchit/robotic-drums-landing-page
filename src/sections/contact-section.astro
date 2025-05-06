@@ -1,5 +1,6 @@
 ---
 import MainContainer from '../containers/main-container.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <MainContainer tag="section" className="grid gap-6 pt-42 md:grid-cols-5">
@@ -80,9 +81,9 @@ import MainContainer from '../containers/main-container.astro'
         ></textarea>
       </div>
       <button
-        class="bg-secondary text-background hover:bg-secondary-dark mt-8 grid w-full rounded-md px-5 py-2.5 text-center font-semibold transition-colors hover:cursor-pointer md:w-fit"
+        class="bg-secondary text-background hover:bg-secondary-dark mt-8 flex w-full items-center justify-center gap-2 rounded-md px-5 py-2.5 text-center font-semibold transition-colors hover:cursor-pointer md:w-fit"
       >
-        Enviar Mensaje
+        Enviar Mensaje <Icon name="mdi:send" class="size-5" />
       </button>
     </form>
   </div>

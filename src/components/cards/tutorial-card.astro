@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
   src: string
   title: string
@@ -26,9 +28,9 @@ const { src, title, description, link } = Astro.props
     </p>
     <a
       href={link}
-      class="bg-secondary text-background hover:bg-secondary-dark grid w-full rounded-md px-5 py-2.5 font-semibold transition-colors md:w-fit"
+      class="bg-secondary text-background hover:bg-secondary-dark flex w-full items-center justify-center gap-1 rounded-md px-5 py-2.5 font-semibold transition-colors md:w-fit"
     >
-      Ver en YouTube &UpperRightArrow;
+      Ver en YouTube <Icon name="mdi:arrow-top-right" class="size-6" />
     </a>
   </div>
 </article>
