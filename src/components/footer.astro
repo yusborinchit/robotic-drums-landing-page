@@ -1,28 +1,30 @@
 ---
 import MainContainer from '../containers/main-container.astro'
 import { Icon } from 'astro-icon/components'
+import LogoImage from '../assets/logo.webp'
+import { Image } from 'astro:assets'
 ---
 
 <footer class="bg-primary text-background mt-64 py-6">
   <MainContainer className="flex flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
     <div class="flex flex-col gap-2">
       <a href="/">
-        <img loading="lazy" src="/logo.webp" alt="Robotic Drums" class="h-10" />
+        <Image src={LogoImage} alt="Robotic Drums Logo" class="h-10 w-auto" />
       </a>
       <p class="text-xs">Copyright © 2025 - Yusborinchit</p>
     </div>
     <div class="bg-background h-px w-full sm:hidden"></div>
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
       <div class="flex flex-col gap-2">
-        <a href="/" class="flex items-center gap-1 text-sm">
+        <a href="https://www.youtube.com/@Tatitamusic" class="flex items-center gap-1 text-sm">
           <Icon name="mdi:youtube" class="size-5" />
           <span>YouTube</span>
         </a>
-        <a href="/" class="flex items-center gap-1 text-sm">
+        <a href="https://roboticdrums.com/#" target="_blank" class="flex items-center gap-1 text-sm">
           <Icon name="mdi:facebook" class="size-5" />
           <span>Facebook</span>
         </a>
-        <a href="/" class="flex items-center gap-1 text-sm">
+        <a href="https://www.instagram.com/robotic_drums_/" target="_blank" class="flex items-center gap-1 text-sm">
           <Icon name="mdi:instagram" class="size-5" />
           <span>Instagram</span>
         </a>
@@ -30,11 +32,15 @@ import { Icon } from 'astro-icon/components'
       <div class="bg-background h-px w-full sm:h-[64px] sm:w-px"></div>
       <div class="flex flex-col gap-2">
         <p class="text-base font-semibold">¿Aún con dudas?</p>
-        <a href="/" class="flex items-center gap-1 text-sm">
+        <a
+          href="https://api.whatsapp.com/send/?phone=59892034050&text&type=phone_number&app_absent=0"
+          target="_blank"
+          class="flex items-center gap-1 text-sm"
+        >
           <Icon name="mdi:whatsapp" class="size-5" />
           <span>+59892034050</span>
         </a>
-        <a href="/" class="flex items-center gap-1 text-sm">
+        <a href="mailto:info@roboticdrums.com" target="_blank" class="flex items-center gap-1 text-sm">
           <Icon name="mdi:email" class="size-5" />
           <span>info@roboticdrums.com</span>
         </a>
