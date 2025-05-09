@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { YouTube } from 'astro-embed'
 
 interface Props {
   src: string
@@ -12,15 +13,7 @@ const { src, title, description, link } = Astro.props
 ---
 
 <article class="group flex flex-col md:last:col-span-2">
-  <iframe
-    loading="lazy"
-    title={`Tutorial de ${title}`}
-    src={src}
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-    frameborder="0"
-    class="aspect-video w-full overflow-hidden rounded-xl md:group-last:aspect-[3/1]"></iframe>
+  <YouTube id={src} posterQuality="high" class="max-h-[400px] min-w-full overflow-hidden rounded-xl object-cover" />
   <div class="relative flex flex-1 flex-col gap-6 overflow-hidden rounded-xl py-4">
     <h3 class="decoration-secondary text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
     <p class="text-dark-gray">
