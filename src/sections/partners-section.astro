@@ -1,5 +1,9 @@
 ---
+import { Image } from 'astro:assets'
 import MainContainer from '../containers/main-container.astro'
+import Partner1 from '../assets/partners/thaleslab.webp'
+import Partner2 from '../assets/partners/contemporanea.webp'
+import Partner3 from '../assets/partners/anni.webp'
 ---
 
 <section class="polka-primary-dark text-background mt-42 py-18">
@@ -9,9 +13,9 @@ import MainContainer from '../containers/main-container.astro'
       Agradecemos el apoyo invaluable de nuestros socios colaboradores
     </p>
     <div class="flex flex-wrap items-center justify-center gap-18">
-      <img loading="lazy" src="/partners/thaleslab.webp" alt="Partner 1" class="h-auto max-w-[300px]" />
-      <img loading="lazy" src="/partners/contemporanea.webp" alt="Partner 3" class="h-auto max-w-[300px]" />
-      <img loading="lazy" src="/partners/anni.webp" alt="Partner 2" class="h-auto max-w-[300px]" />
+      <Image src={Partner1} alt="ThalesLab Logo" class="h-auto max-w-[300px]" />
+      <Image src={Partner2} alt="Contemporanea Logo" class="h-auto max-w-[300px]" />
+      <Image src={Partner3} alt="Anni Logo" class="h-auto max-w-[300px]" />
     </div>
   </MainContainer>
 </section>
