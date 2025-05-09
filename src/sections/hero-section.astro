@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 import MainContainer from '../containers/main-container.astro'
 ---
 
@@ -15,14 +16,14 @@ import MainContainer from '../containers/main-container.astro'
       </p>
       <a
         href="#sobre-nosotros"
-        class="bg-secondary text-background hover:bg-secondary-dark grid w-fit rounded-md px-5 py-2.5 font-semibold transition-colors"
+        class="bg-secondary text-background hover:bg-secondary-dark flex w-fit items-center gap-1 rounded-md px-3 py-2.5 font-semibold transition-colors"
       >
-        Descubrí más
+        <Icon name="mdi:arrow-bottom" class="size-6" /> Descubrí más <Icon name="mdi:arrow-bottom" class="size-6" />
       </a>
     </div>
     <img
       loading="lazy"
-      src="/hero-image.png"
+      src="/hero-image.webp"
       alt="Hero"
       class="z-0 -mt-56 h-[375px] w-full object-cover object-top lg:w-[70%]"
     />

@@ -1,25 +1,67 @@
 ---
 import MainContainer from '../containers/main-container.astro'
 import { Icon } from 'astro-icon/components'
+
+const links = [
+  { href: '/', label: 'Inicio' },
+  { href: '#sobre-nosotros', label: 'Sobre Nosotros' },
+  { href: '#ventajas', label: 'Ventajas' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#socios', label: 'Socios' },
+  { href: '#contacto', label: 'Contacto' },
+]
 ---
 
-<header class="bg-primary text-background sticky top-0 left-0 z-50 py-4">
-  <MainContainer className="flex items-center justify-between">
+<div id="menu-blur" class="fixed inset-0 z-50 hidden bg-black/30 backdrop-blur-sm md:hidden"></div>
+<header class="bg-primary text-background sticky top-0 left-0 z-60">
+  <MainContainer className="relative my-auto flex h-[80px] items-center justify-between py-4">
     <a href="/">
-      <img loading="lazy" src="/logo.png" alt="Robotic Drums" class="h-10" />
+      <img loading="lazy" src="/logo.webp" alt="Robotic Drums" class="h-10 shrink-0" />
     </a>
-    <button class="sm:hidden">
+    <button id="menu-toggle" aria-label="Abrir menú" class="md:hidden">
       <Icon name="mdi:menu" title="Navbar Menu" class="size-12" />
     </button>
-    <nav class="hidden sm:inline">
+    <nav id="mobile-menu" class="polka-primary-dark absolute top-full left-0 hidden w-full md:hidden">
+      <ul class="flex flex-col items-center gap-4 py-4 text-base">
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} class="hover:underline">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <nav id="desktop-menu" class="hidden md:inline">
       <ul class="flex items-center gap-4 text-base">
-        <li><a href="/" class="hover:underline">Inicio</a></li>
-        <li><a href="#ventajas" class="hover:underline">Ventajas</a></li>
-        <li><a href="#galeria" class="hover:underline">Galería</a></li>
-        <li><a href="#sobre-nosotros" class="hover:underline">Sobre Nosotros</a></li>
-        <li><a href="#socios" class="hover:underline">Socios</a></li>
-        <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} class="hover:underline">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </MainContainer>
 </header>
+
+<script is:inline>
+  const toggle = document.getElementById('menu-toggle')
+  const menu = document.getElementById('mobile-menu')
+  const menuBlur = document.getElementById('menu-blur')
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('hidden')
+    menuBlur.classList.toggle('hidden', isOpen)
+  })
+
+  menuBlur.addEventListener('click', () => {
+    menu.classList.add('hidden')
+    menuBlur.classList.add('hidden')
+  })
+</script>

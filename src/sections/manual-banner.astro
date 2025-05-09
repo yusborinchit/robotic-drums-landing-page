@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components'
 import MainContainer from '../containers/main-container.astro'
 ---
 
@@ -9,9 +10,9 @@ import MainContainer from '../containers/main-container.astro'
     </h2>
     <a
       href="https://roboticdrums.com/wp-content/uploads/2023/01/Manual-Robotic_ESP-y-ENG.pdf"
-      class="bg-primary border-background text-background hover:bg-background hover:text-primary my-auto ml-auto grid h-fit w-fit rounded-md border-2 px-5 py-2.5 font-semibold transition-colors"
+      class="bg-primary border-background text-background hover:bg-background hover:text-primary my-auto ml-auto flex h-fit w-fit items-center gap-1 rounded-md border-2 px-5 py-2.5 font-semibold transition-colors"
     >
-      Descargar Aquí
+      Descargar Aquí <Icon name="mdi:cellphone-download" class="size-6" />
     </a>
   </MainContainer>
 </section>
