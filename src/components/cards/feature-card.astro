@@ -19,7 +19,7 @@ const { title, description, src, alt, imgPosition } = Astro.props
 <article
   class="group flex md:odd:row-start-1 md:even:col-span-2 lg:aspect-[5/6] lg:odd:mb-18 lg:even:col-span-1 lg:even:row-start-1 lg:even:mt-18"
 >
-  <SlideInFromBottom client:load>
+  <SlideInFromBottom client:idle>
     <div
       class="group-even:bg-primary group-even:text-background relative flex h-full flex-col gap-4 overflow-hidden rounded-xl px-6 py-8"
     >

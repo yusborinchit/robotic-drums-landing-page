@@ -12,18 +12,22 @@ const links = [
   { href: '#socios', label: 'Socios' },
   { href: '#contacto', label: 'Contacto' },
 ]
+
+const menuMobileBlurId = 'menu-mobile-blur'
+const menuMobileId = 'menu-mobile'
+const menuMobileToggleId = 'menu-mobile-toggle'
 ---
 
-<div id="menu-blur" class="fixed inset-0 z-50 hidden bg-black/30 backdrop-blur-sm md:hidden"></div>
+<div id={menuMobileBlurId} class="fixed inset-0 z-50 hidden bg-black/30 backdrop-blur-sm md:hidden"></div>
 <header class="bg-primary text-background sticky top-0 left-0 z-60">
   <MainContainer className="relative my-auto flex h-[80px] items-center justify-between py-4">
     <a href="/">
       <Image src={LogoImage} alt="Robotic Drums Logo" class="h-10 w-auto shrink-0" />
     </a>
-    <button id="menu-toggle" aria-label="Abrir menú" class="md:hidden">
+    <button id={menuMobileToggleId} aria-label="Abrir menú" class="md:hidden">
       <Icon name="mdi:menu" title="Navbar Menu" class="size-12" />
     </button>
-    <nav id="mobile-menu" class="polka-primary-dark absolute top-full left-0 hidden w-full md:hidden">
+    <nav id={menuMobileId} class="polka-primary-dark absolute top-full left-0 hidden w-full md:hidden">
       <ul class="flex flex-col items-center py-4 text-base">
         {
           links.map((link) => (
@@ -36,7 +40,7 @@ const links = [
         }
       </ul>
     </nav>
-    <nav id="desktop-menu" class="hidden md:inline">
+    <nav class="hidden md:inline">
       <ul class="flex items-center gap-4 text-base">
         {
           links.map((link) => (
@@ -52,18 +56,18 @@ const links = [
   </MainContainer>
 </header>
 
-<script is:inline>
-  const toggle = document.getElementById('menu-toggle')
-  const menu = document.getElementById('mobile-menu')
-  const menuBlur = document.getElementById('menu-blur')
+<script is:inline define:vars={{ menuMobileToggleId, menuMobileId, menuMobileBlurId }}>
+  const $menuMobileToggle = document.getElementById(menuMobileToggleId)
+  const $menuMobile = document.getElementById(menuMobileId)
+  const $menuBlur = document.getElementById(menuMobileBlurId)
 
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('hidden')
-    menuBlur.classList.toggle('hidden', isOpen)
+  $menuMobileToggle.addEventListener('click', () => {
+    const isOpen = $menuMobile.classList.toggle('hidden')
+    $menuBlur.classList.toggle('hidden', isOpen)
   })
 
-  menuBlur.addEventListener('click', () => {
-    menu.classList.add('hidden')
-    menuBlur.classList.add('hidden')
+  $menuBlur.addEventListener('click', () => {
+    $menuMobile.classList.add('hidden')
+    $menuBlur.classList.add('hidden')
   })
 </script>
