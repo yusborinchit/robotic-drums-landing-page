@@ -4,19 +4,18 @@ module.exports = {
     es2022: true,
     browser: true,
   },
-  extends: ['eslint:recommended', 'plugin:astro/recommended', 'plugin:astro/jsx-a11y-strict'],
+  extends: [
+    'eslint:recommended',
+    'plugin:astro/recommended',
+    'plugin:astro/jsx-a11y-strict',
+    'plugin:prettier/recommended',
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
   rules: {},
   overrides: [
-    {
-      files: ['*.js'],
-      rules: {
-        'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-      },
-    },
     {
       files: ['*.astro'],
       parser: 'astro-eslint-parser',
@@ -29,7 +28,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.ts'],
+      files: ['*.ts', '*.tsx'],
       parser: '@typescript-eslint/parser',
       extends: ['plugin:@typescript-eslint/recommended'],
       rules: {

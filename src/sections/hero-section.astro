@@ -24,9 +24,9 @@ import { SlideInFromBottom } from '../components/motion/slide-in'
         <Icon name="mdi:arrow-bottom" class="size-6" /> Descubrí más <Icon name="mdi:arrow-bottom" class="size-6" />
       </a>
     </div>
-    <div class="z-0 -mt-56 h-[375px] w-full object-cover object-top lg:w-[70%]">
+    <div class="z-0 -mt-56 h-[375px] w-full lg:w-[70%] [&>astro-island>div]:h-full">
       <SlideInFromBottom client:load>
-        <Image src={HeroImage} alt="Hero" class="" />
+        <Image src={HeroImage} priority={true} alt="Hero" class="h-full w-full object-cover object-top" />
       </SlideInFromBottom>
     </div>
   </MainContainer>

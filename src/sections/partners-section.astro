@@ -4,18 +4,20 @@ import MainContainer from '../containers/main-container.astro'
 import Partner1 from '../assets/partners/thaleslab.webp'
 import Partner2 from '../assets/partners/contemporanea.webp'
 import Partner3 from '../assets/partners/anni.webp'
+import PartnersCarousel from '../components/motion/partners-carousel'
 ---
 
-<section class="polka-primary-dark text-background mt-42 py-18">
-  <MainContainer className="flex flex-col gap-6">
+<section class="polka-primary-dark text-background relative mt-42 py-18">
+  <div class="from-primary to-primary absolute inset-0 z-10 bg-gradient-to-r via-transparent"></div>
+  <MainContainer className="flex flex-col gap-6 *:z-20">
     <h2 id="socios" class="text-center text-5xl font-bold tracking-tighter">Nuestros socios</h2>
     <p class="text-light-gray mx-auto max-w-[60ch] text-center">
       Agradecemos el apoyo invaluable de nuestros socios colaboradores
     </p>
-    <div class="flex flex-wrap items-center justify-center gap-18">
-      <Image src={Partner1} alt="ThalesLab Logo" class="h-auto max-w-[300px]" />
-      <Image src={Partner2} alt="Contemporanea Logo" class="h-auto max-w-[300px]" />
-      <Image src={Partner3} alt="Anni Logo" class="h-auto max-w-[300px]" />
-    </div>
+    <PartnersCarousel client:load>
+      <Image src={Partner1} alt="ThalesLab Logo" class="z-0 mx-[24px] h-auto w-[300px] object-contain" />
+      <Image src={Partner2} alt="Contemporanea Logo" class="z-0 mx-[24px] h-auto w-[300px] object-contain" />
+      <Image src={Partner3} alt="Anni Logo" class="z-0 mx-[24px] h-auto w-[300px] object-contain" />
+    </PartnersCarousel>
   </MainContainer>
 </section>

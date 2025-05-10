@@ -3,21 +3,25 @@ import { type ImageMetadata } from 'astro'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import { SlideInFromBottom } from '../motion/slide-in'
+import { twMerge } from 'tailwind-merge'
 
 interface Props {
   title: string
   description: string
   src?: ImageMetadata
   alt?: string
+  imgPosition?: 'left' | 'right'
 }
 
-const { title, description, src, alt } = Astro.props
+const { title, description, src, alt, imgPosition } = Astro.props
 ---
 
-<article class="group">
+<article
+  class="group flex md:odd:row-start-1 md:even:col-span-2 lg:aspect-[5/6] lg:odd:mb-18 lg:even:col-span-1 lg:even:row-start-1 lg:even:mt-18"
+>
   <SlideInFromBottom client:load>
     <div
-      class="group-even:bg-primary group group-even:text-background relative flex flex-col gap-4 overflow-hidden rounded-xl px-6 py-8 md:group-even:col-span-2 md:odd:row-start-1 lg:aspect-[4/5] lg:group-even:col-span-1 lg:group-even:row-start-1 lg:group-even:mt-18 lg:odd:mb-18"
+      class="group-even:bg-primary group-even:text-background relative flex h-full flex-col gap-4 overflow-hidden rounded-xl px-6 py-8"
     >
       <h3 class="decoration-secondary z-20 text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
       <p class="group-even:text-light-gray text-dark-gray z-20">
@@ -30,11 +34,14 @@ const { title, description, src, alt } = Astro.props
         Ver Más <Icon name="mdi:arrow-top-right" class="size-4" />
       </a>
       {
-        src && alt && (
+        src && alt && imgPosition && (
           <Image
             src={src}
             alt={alt}
-            class="absolute -z-10 group-first:bottom-0 group-first:left-0 group-first:h-[50%] group-first:w-auto group-last:right-0 group-last:bottom-0 group-last:h-[45%] group-last:w-auto"
+            class={twMerge(
+              'absolute bottom-0 -z-10 w-auto',
+              imgPosition === 'left' ? 'left-0 h-[50%]' : 'right-0 h-[45%]'
+            )}
           />
         )
       }

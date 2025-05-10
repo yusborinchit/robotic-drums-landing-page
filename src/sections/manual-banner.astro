@@ -3,8 +3,9 @@ import { Icon } from 'astro-icon/components'
 import MainContainer from '../containers/main-container.astro'
 ---
 
-<section class="polka-primary-dark text-background mt-42 py-16">
-  <MainContainer className="grid gap-6 sm:grid-cols-[3fr_2fr]">
+<section class="polka-primary-dark text-background relative mt-42 py-16">
+  <div class="from-primary to-primary absolute inset-0 z-10 bg-gradient-to-r via-transparent"></div>
+  <MainContainer className="grid gap-6 *:z-20 sm:grid-cols-[3fr_2fr]">
     <h2 id="sobre-nosotros" class="text-3xl font-bold tracking-tighter">
       ¡Descarga nuestro Manual de Usuario para no perderte nada!
     </h2>
