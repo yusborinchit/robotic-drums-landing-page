@@ -12,8 +12,12 @@ interface Props {
 const { src, title, description, link } = Astro.props
 ---
 
-<article class="flex flex-col">
-  <YouTube id={src} posterQuality="high" class="h-[400px] overflow-hidden rounded-xl object-cover" />
+<article class="flex w-full flex-col">
+  <YouTube
+    id={src}
+    posterQuality="high"
+    class="max-h-[350px]! max-w-full! flex-1 overflow-hidden rounded-xl object-cover"
+  />
   <div class="relative flex flex-1 flex-col gap-6 overflow-hidden rounded-xl py-4">
     <h3 class="decoration-secondary text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
     <p class="text-dark-gray">
