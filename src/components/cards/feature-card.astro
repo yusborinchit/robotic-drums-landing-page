@@ -2,6 +2,7 @@
 import { type ImageMetadata } from 'astro'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
+import { SlideInFromBottom } from '../motion/slide-in'
 
 interface Props {
   title: string
@@ -13,30 +14,34 @@ interface Props {
 const { title, description, src, alt } = Astro.props
 ---
 
-<article
-  class="even:bg-primary group even:text-background relative flex flex-col gap-4 overflow-hidden rounded-xl px-6 py-8 md:odd:row-start-1 md:even:col-span-2 lg:aspect-[4/5] lg:odd:mb-18 lg:even:col-span-1 lg:even:row-start-1 lg:even:mt-18"
->
-  <h3 class="decoration-secondary z-20 text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
-  <p class="group-even:text-light-gray text-dark-gray z-20">
-    {description}
-  </p>
-  <a
-    href="#info"
-    class="group-odd:bg-secondary text-background group-even:bg-primary group-even:hover:bg-primary-dark group-odd:hover:bg-secondary-dark z-20 mt-24 ml-auto flex w-fit items-center gap-1 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors lg:mt-auto"
-  >
-    Ver Más <Icon name="mdi:arrow-top-right" class="size-4" />
-  </a>
-  {
-    src && alt && (
-      <Image
-        src={src}
-        alt={alt}
-        class="absolute -z-10 group-first:bottom-0 group-first:left-0 group-first:h-[50%] group-first:w-auto group-last:right-0 group-last:bottom-0 group-last:h-[45%] group-last:w-auto"
-      />
-    )
-  }
-  <div
-    class="group-odd:polka-primary group-odd:before:to-background group-odd:before:via-background group-even:before:to-primary group-even:before:via-primary group-even:polka-primary-dark absolute inset-0 translate-y-1/2 group-odd:-z-30 group-even:z-10 before:absolute before:inset-0 before:-z-20 before:bg-radial before:from-transparent before:bg-bottom group-odd:before:via-70% group-even:before:via-95%"
-  >
-  </div>
+<article class="group">
+  <SlideInFromBottom client:load>
+    <div
+      class="group-even:bg-primary group group-even:text-background relative flex flex-col gap-4 overflow-hidden rounded-xl px-6 py-8 md:group-even:col-span-2 md:odd:row-start-1 lg:aspect-[4/5] lg:group-even:col-span-1 lg:group-even:row-start-1 lg:group-even:mt-18 lg:odd:mb-18"
+    >
+      <h3 class="decoration-secondary z-20 text-3xl font-bold tracking-tight underline decoration-[3px]">{title}</h3>
+      <p class="group-even:text-light-gray text-dark-gray z-20">
+        {description}
+      </p>
+      <a
+        href="#info"
+        class="group-odd:bg-secondary text-background group-even:bg-primary group-even:hover:bg-primary-dark group-odd:hover:bg-secondary-dark z-20 mt-24 ml-auto flex w-fit items-center gap-1 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors lg:mt-auto"
+      >
+        Ver Más <Icon name="mdi:arrow-top-right" class="size-4" />
+      </a>
+      {
+        src && alt && (
+          <Image
+            src={src}
+            alt={alt}
+            class="absolute -z-10 group-first:bottom-0 group-first:left-0 group-first:h-[50%] group-first:w-auto group-last:right-0 group-last:bottom-0 group-last:h-[45%] group-last:w-auto"
+          />
+        )
+      }
+      <div
+        class="group-odd:polka-primary group-odd:before:to-background group-odd:before:via-background group-even:before:to-primary group-even:before:via-primary group-even:polka-primary-dark absolute inset-0 translate-y-1/2 group-odd:-z-30 group-even:z-10 before:absolute before:inset-0 before:-z-20 before:bg-radial before:from-transparent before:bg-bottom group-odd:before:via-70% group-even:before:via-95%"
+      >
+      </div>
+    </div>
+  </SlideInFromBottom>
 </article>

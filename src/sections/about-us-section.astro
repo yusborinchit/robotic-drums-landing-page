@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components'
 import MainContainer from '../containers/main-container.astro'
 import { Image } from 'astro:assets'
 import RoboticDrums1Image from '../assets/robotic-drums-1.webp'
+import { SlideInFromRight } from '../components/motion/slide-in'
 ---
 
 <MainContainer tag="section" className="grid items-center gap-6 pt-42 md:grid-cols-[3fr_2fr]">
@@ -25,9 +26,11 @@ import RoboticDrums1Image from '../assets/robotic-drums-1.webp'
       Más información <Icon name="mdi:arrow-top-right" class="size-6" />
     </a>
   </div>
-  <Image
-    src={RoboticDrums1Image}
-    alt="Robotic Drums"
-    class="row-start-1 h-full max-h-[300px] w-full rounded-xl object-cover object-[0%_25%] md:row-start-1 md:max-h-[550px]"
-  />
+  <SlideInFromRight client:load>
+    <Image
+      src={RoboticDrums1Image}
+      alt="Robotic Drums"
+      class="row-start-1 h-full max-h-[300px] w-full rounded-xl object-cover object-[0%_25%] md:row-start-1 md:max-h-[550px]"
+    />
+  </SlideInFromRight>
 </MainContainer>

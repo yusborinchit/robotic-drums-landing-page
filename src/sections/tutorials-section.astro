@@ -1,6 +1,7 @@
 ---
 import MainContainer from '../containers/main-container.astro'
 import TutorialCard from '../components/cards/tutorial-card.astro'
+import { SlideInFromBottom, SlideInFromLeft, SlideInFromRight } from '../components/motion/slide-in'
 ---
 
 <MainContainer className="flex flex-col gap-6 pt-42">
@@ -14,23 +15,35 @@ import TutorialCard from '../components/cards/tutorial-card.astro'
     >
   </p>
   <div class="grid gap-6 md:grid-cols-2">
-    <TutorialCard
-      src="https://www.youtube.com/embed/Ha3AO2uycHk?si=HOr_snvvQPkCmX2P&controls=0"
-      title="David Stabilito"
-      description="David Stabilito nos explica paso a paso cómo conectar y sincronizar Robotic Drums con el software Ableton Live para usarlo en presentaciones musicales."
-      link="https://youtu.be/Ha3AO2uycHk"
-    />
-    <TutorialCard
-      src="https://www.youtube.com/embed/9A0JjzSZ6vs?si=yjuJ7aBsnTsKYN9T&controls=0"
-      title="Daniel Tatita Marquez"
-      description="Tatita Marquez nos enseña una introducción a los patrones rítmicos de la Clave y su técnica de mano, integrándolos con los sonidos de Robotic Drums."
-      link="https://youtu.be/9A0JjzSZ6vs"
-    />
-    <TutorialCard
-      src="https://www.youtube.com/embed/UU993LGhotQ?si=OKZDSSrUt39pIPr0&controls=0"
-      title="Santiago Mareco"
-      description="Santiago Mareco interpreta una obra original para Tamborim y Robotic Drums, mostrando cómo se fusionan instrumentos tradicionales y tecnología musical."
-      link="https://youtu.be/UU993LGhotQ"
-    />
+    <div>
+      <SlideInFromLeft client:load>
+        <TutorialCard
+          src="https://www.youtube.com/embed/Ha3AO2uycHk?si=HOr_snvvQPkCmX2P&controls=0"
+          title="David Stabilito"
+          description="David Stabilito nos explica paso a paso cómo conectar y sincronizar Robotic Drums con el software Ableton Live para usarlo en presentaciones musicales."
+          link="https://youtu.be/Ha3AO2uycHk"
+        />
+      </SlideInFromLeft>
+    </div>
+    <div>
+      <SlideInFromRight client:load>
+        <TutorialCard
+          src="https://www.youtube.com/embed/9A0JjzSZ6vs?si=yjuJ7aBsnTsKYN9T&controls=0"
+          title="Daniel Tatita Marquez"
+          description="Tatita Marquez nos enseña una introducción a los patrones rítmicos de la Clave y su técnica de mano, integrándolos con los sonidos de Robotic Drums."
+          link="https://youtu.be/9A0JjzSZ6vs"
+        />
+      </SlideInFromRight>
+    </div>
+    <div class="md:col-span-2">
+      <SlideInFromBottom client:load>
+        <TutorialCard
+          src="https://www.youtube.com/embed/UU993LGhotQ?si=OKZDSSrUt39pIPr0&controls=0"
+          title="Santiago Mareco"
+          description="Santiago Mareco interpreta una obra original para Tamborim y Robotic Drums, mostrando cómo se fusionan instrumentos tradicionales y tecnología musical."
+          link="https://youtu.be/UU993LGhotQ"
+        />
+      </SlideInFromBottom>
+    </div>
   </div>
 </MainContainer>

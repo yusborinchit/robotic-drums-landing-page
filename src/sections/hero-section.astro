@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components'
 import MainContainer from '../containers/main-container.astro'
 import { Image } from 'astro:assets'
 import HeroImage from '../assets/hero-image.webp'
+import { SlideInFromBottom } from '../components/motion/slide-in'
 ---
 
 <div class="bg-primary text-background overflow-hidden">
@@ -23,6 +24,10 @@ import HeroImage from '../assets/hero-image.webp'
         <Icon name="mdi:arrow-bottom" class="size-6" /> Descubrí más <Icon name="mdi:arrow-bottom" class="size-6" />
       </a>
     </div>
-    <Image src={HeroImage} alt="Hero" class="z-0 -mt-56 h-[375px] w-full object-cover object-top lg:w-[70%]" />
+    <div class="z-0 -mt-56 h-[375px] w-full object-cover object-top lg:w-[70%]">
+      <SlideInFromBottom client:load>
+        <Image src={HeroImage} alt="Hero" class="" />
+      </SlideInFromBottom>
+    </div>
   </MainContainer>
 </div>

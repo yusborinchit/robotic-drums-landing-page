@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import MainContainer from '../containers/main-container.astro'
 import { Icon } from 'astro-icon/components'
 import ContactImage from '../assets/contact.webp'
+import { SlideInFromRight } from '../components/motion/slide-in'
 ---
 
 <MainContainer tag="section" className="grid gap-6 pt-42 md:grid-cols-5">
@@ -89,7 +90,9 @@ import ContactImage from '../assets/contact.webp'
       </button>
     </form>
   </div>
-  <div class="col-span-2 hidden md:inline">
-    <Image src={ContactImage} alt="Foto de Daniel Tatita Marquez" class="h-full rounded-xl object-cover" />
+  <div class="col-span-2 hidden md:flex">
+    <SlideInFromRight client:load>
+      <Image src={ContactImage} alt="Foto de Daniel Tatita Marquez" class="min-h-full rounded-xl object-cover" />
+    </SlideInFromRight>
   </div>
 </MainContainer>

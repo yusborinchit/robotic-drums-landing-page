@@ -16,6 +16,7 @@ import VideoThumbnail5 from '../assets/thumbnails/thumbnail-5.webp'
 import VideoThumbnail6 from '../assets/thumbnails/thumbnail-6.webp'
 import VideoThumbnail7 from '../assets/thumbnails/thumbnail-7.webp'
 import VideoThumbnail8 from '../assets/thumbnails/thumbnail-8.webp'
+import { SlideInFromBottom } from '../components/motion/slide-in'
 
 const galleryVideos = [
   { src: GalleryVideo1, thumbnail: VideoThumbnail1 },
@@ -44,15 +45,19 @@ const galleryVideos = [
     <MainContainer className="grid grid-cols-2 gap-6 md:grid-cols-4">
       {
         galleryVideos.map((video) => (
-          <video
-            controls
-            preload="none"
-            poster={video.thumbnail.src}
-            class="bg-light-gray aspect-[9/16] h-full w-full rounded-xl object-cover odd:mb-6 even:mt-6"
-          >
-            <source src={video.src} type="video/mp4" />
-            <track kind="captions" label="Robotic Drums" />
-          </video>
+          <div class="group">
+            <SlideInFromBottom client:load>
+              <video
+                controls
+                preload="none"
+                poster={video.thumbnail.src}
+                class="bg-light-gray aspect-[9/16] h-full w-full rounded-xl object-cover group-odd:mb-6 group-even:mt-6"
+              >
+                <source src={video.src} type="video/mp4" />
+                <track kind="captions" label="Robotic Drums" />
+              </video>
+            </SlideInFromBottom>
+          </div>
         ))
       }
     </MainContainer>
