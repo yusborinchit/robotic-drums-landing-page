@@ -1,4 +1,5 @@
 ---
+import Header from '../components/header.astro'
 import '../styles/global.css'
 
 const {
@@ -10,7 +11,7 @@ const {
 } = Astro.props
 ---
 
-<html lang="es" dir="ltr" class="scroll-pt-[calc(80px+calc(var(--spacing)*8))] overflow-x-hidden scroll-smooth">
+<html lang="es" dir="ltr" class="scroll-pt-[calc(80px+calc(var(--spacing)*8))] scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +32,10 @@ const {
 
     <title>{title}</title>
   </head>
-  <body class="bg-background text-foreground max-w-vw relative overflow-x-hidden font-sans text-lg">
-    <slot />
+  <body class="bg-background text-foreground max-w-vw relative font-sans text-lg">
+    <Header />
+    <div class="overflow-x-hidden">
+      <slot />
+    </div>
   </body>
 </html>
