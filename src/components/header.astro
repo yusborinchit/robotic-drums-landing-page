@@ -57,9 +57,9 @@ const menuMobileToggleId = 'menu-mobile-toggle'
 </header>
 
 <script is:inline define:vars={{ menuMobileToggleId, menuMobileId, menuMobileBlurId }}>
+  const $menuBlur = document.getElementById(menuMobileBlurId)
   const $menuMobileToggle = document.getElementById(menuMobileToggleId)
   const $menuMobile = document.getElementById(menuMobileId)
-  const $menuBlur = document.getElementById(menuMobileBlurId)
 
   $menuMobileToggle.addEventListener('click', () => {
     const isOpen = $menuMobile.classList.toggle('hidden')
