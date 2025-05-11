@@ -1,7 +1,6 @@
 import {
   domAnimation,
   LazyMotion,
-  useReducedMotion,
   type AnimationControls,
   type TargetAndTransition,
   type Transition,
@@ -25,11 +24,7 @@ interface SlideInProps {
 }
 
 function SlideIn({ initial, animate, transition, whileInView, viewport, children }: Readonly<SlideInProps>) {
-  const reducedMotion = useReducedMotion()
-
-  return reducedMotion ? (
-    <div>{children}</div>
-  ) : (
+  return (
     <LazyMotion features={domAnimation}>
       <m.div initial={initial} animate={animate} transition={transition} whileInView={whileInView} viewport={viewport}>
         {children}
